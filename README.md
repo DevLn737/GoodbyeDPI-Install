@@ -1,8 +1,9 @@
 # Автоматическая Установка и Удаление GoodByeDPI
 
 ## Описание
+> Скрипт необходимо запустить только один раз, при установке или удалении, дальше служба будет автоматически запускаться, при входе в систему.
 
-Здесь представлены скрипты для автоматического установки и удаления GoodbyeDPI от ValdikSS для обхода блокировки youtube. Скачивание и установка полностью автоматическая, скрипт был создан по причине, что официальный cmd скрипт, который идёт в release версии GoodByeDPI просто не работает у меня в том виде, в котором он представлен. Также этот скрипт будет полезен тем, кто хочет "просто нажать одну кнопочку, чтобы всё работало".
+Здесь представлены скрипты для автоматического установки и удаления GoodbyeDPI от ValdikSS для обхода блокировки youtube. Скачивание и установка полностью автоматическая, скрипт был создан по причине, что официальный cmd скрипт, который идёт в release версии GoodByeDPI просто не работает у меня в том виде, в котором он представлен. Также этот скрипт будет полезен тем, кто хочет "просто нажать одну кнопочку, чтобы всё работало". 
 
 ## Установка
 
@@ -12,9 +13,10 @@
    - Вы можете скачать скрипт `install_bypass.cmd` по [этой ссылке](https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/install_bypass.cmd).
 
    **Альтернативный метод скачивания через PowerShell**:
-   - Откройте PowerShell и выполните следующую команду для скачивания скрипта:
+   - Откройте PowerShell и выполните следующую команду для скачивания скрипта на рабочий стол:
      ```powershell
-     wget -Uri "https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/install_bypass.cmd" -OutFile "install_bypass.cmd"
+     $desktop = [System.IO.Path]::Combine($env:USERPROFILE, 'Desktop')
+     wget -Uri "https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/install_bypass.cmd" -OutFile "$desktop\install_bypass.cmd"
      ```
 
 2. **Запустите Скрипт**:
@@ -79,9 +81,10 @@
    - Вы можете скачать скрипт `remove_bypass.cmd` по [этой ссылке](https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/remove_bypass.cmd).
 
    **Альтернативный метод скачивания через PowerShell**:
-   - Откройте PowerShell и выполните следующую команду для скачивания скрипта:
+   - Откройте PowerShell и выполните следующую команду для скачивания скрипта на рабочий стол:
      ```powershell
-     wget -Uri "https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/remove_bypass.cmd" -OutFile "remove_bypass.cmd"
+     $desktop = [System.IO.Path]::Combine($env:USERPROFILE, 'Desktop')
+     wget -Uri "https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/install_bypass.cmd" -OutFile "$desktop\install_bypass.cmd"
      ```
 
 2. **Запустите Скрипт**:
