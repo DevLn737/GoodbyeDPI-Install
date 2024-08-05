@@ -10,7 +10,7 @@
 ### Скачивание и Запуск Скрипта Установки
 
 1. **Скачайте Скрипт Установки**:
-   - Вы можете скачать скрипт `install_bypass.cmd` по [этой ссылке](https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/install_bypass.cmd).
+   - Скачать и распаковать архив по [этой ссылке](https://github.com/DevLn737/GoodbyeDPI-Install/archive/refs/heads/main.zip).
 
    **Альтернативный метод скачивания через PowerShell**:
    - Откройте PowerShell и выполните следующую команду для скачивания скрипта на рабочий стол:
@@ -27,7 +27,7 @@
 
 После установки DPIBypass вам может потребоваться дополнительно настроить ваш браузер для работы GoodByeDPI.
 
-#### Включение QUIC и Отключение Поддержки TLS 1.3 Hybridized Kyber
+#### Включение QUIC и Включение Поддержки TLS 1.3 Hybridized Kyber
 
 ##### Google Chrome
 
@@ -35,9 +35,9 @@
 2. **Включите QUIC**:
    - Найдите "Experimental QUIC protocol".
    - Установите значение в `Enabled`.
-3. **Отключите Поддержку TLS 1.3 Hybridized Kyber**:
+3. **Включить Поддержку TLS 1.3 Hybridized Kyber**:
    - Найдите "TLS 1.3" или "Kyber".
-   - Установите любые соответствующие параметры в `Disabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
+   - Установите любые соответствующие параметры в `Enabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
 4. **Перезапустите Chrome** для применения изменений.
 
 ##### Mozilla Firefox
@@ -46,9 +46,9 @@
 2. **Включите QUIC**:
    - Найдите `network.http.http3.enabled`.
    - Установите значение в `true`.
-3. **Отключите Поддержку TLS 1.3 Hybridized Kyber**:
+3. **Включить Поддержку TLS 1.3 Hybridized Kyber**:
    - Найдите `security.tls.version.max`.
-   - Убедитесь, что установлено значение, которое не включает поддержку Kyber, обычно `4` для TLS 1.3.
+   - Установите любые соответствующие параметры в `Enabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
 4. **Перезапустите Firefox** для применения изменений.
 
 ##### Microsoft Edge
@@ -57,9 +57,9 @@
 2. **Включите QUIC**:
    - Найдите "Experimental QUIC protocol".
    - Установите значение в `Enabled`.
-3. **Отключите Поддержку TLS 1.3 Hybridized Kyber**:
+3. **Включить Поддержку TLS 1.3 Hybridized Kyber**:
    - Найдите "TLS 1.3" или "Kyber".
-   - Установите любые соответствующие параметры в `Disabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
+   - Установите любые соответствующие параметры в `Enabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
 4. **Перезапустите Edge** для применения изменений.
 
 ##### Yandex Browser
@@ -68,9 +68,9 @@
 2. **Включите QUIC**:
    - Найдите "Experimental QUIC protocol".
    - Установите значение в `Enabled`.
-3. **Отключите Поддержку TLS 1.3 Hybridized Kyber**:
+3. **Включить Поддержку TLS 1.3 Hybridized Kyber**:
    - Найдите "TLS 1.3" или "Kyber".
-   - Установите любые соответствующие параметры в `Disabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
+   - Установите любые соответствующие параметры в `Enabled`, если они связаны с поддержкой TLS 1.3 Hybridized Kyber.
 4. **Перезапустите Yandex Browser** для применения изменений.
 
 ## Удаление
@@ -78,7 +78,7 @@
 ### Скачивание и Запуск Скрипта Удаления
 
 1. **Скачайте Скрипт Удаления**:
-   - Вы можете скачать скрипт `remove_bypass.cmd` по [этой ссылке](https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/remove_bypass.cmd).
+   - Скачать и распаковать архив по [этой ссылке](https://github.com/DevLn737/GoodbyeDPI-Install/archive/refs/heads/main.zip).
 
    **Альтернативный метод скачивания через PowerShell**:
    - Откройте PowerShell и выполните следующую команду для скачивания скрипта на рабочий стол:
