@@ -11,6 +11,7 @@
 
 1. **Скачайте Скрипт Установки**:
    - Скачать и распаковать архив по [этой ссылке](https://github.com/DevLn737/GoodbyeDPI-Install/archive/refs/heads/main.zip).
+   - Либо скачать отдельно скрипт или скопировать его содержание [install_bypass.cmd](https://github.com/DevLn737/GoodbyeDPI-Install/blob/main/install_bypass.cmd)
 
    **Альтернативный метод скачивания через PowerShell**:
    - Откройте PowerShell и выполните следующую команду для скачивания скрипта на рабочий стол:
@@ -19,10 +20,17 @@
      wget -Uri "https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/install_bypass.cmd" -OutFile "$desktop\install_bypass.cmd"
      ```
 
+
 2. **Запустите Скрипт**:
    - Щелкните правой кнопкой мыши на `install_bypass.cmd` и выберите "Запуск от имени администратора".
    - Следуйте инструкциям на экране для завершения установки.
 
+3. **Следуйте инструкции скрипта**
+   - Есть 3 варианта выбора домена
+   1. Youtube Only(Разблокирует только youtube)
+   2. Domains blocked by TSPU(Разблокирует все сайты, которые блокируются через ТСПУ(пр. youtube.com, rutracker.org, udemy.com и тд))
+   3. Domains used in the Censor Tracker(Использовать список доменов расширения Censor Tracker, разблокирует почти все, но не всегда стабильно)
+   - Рекомендуется вариант 1 или 2, но можно попробовать и 3
 ### Конфигурация После Установки
 
 После установки DPIBypass вам может потребоваться дополнительно настроить ваш браузер для работы GoodByeDPI.

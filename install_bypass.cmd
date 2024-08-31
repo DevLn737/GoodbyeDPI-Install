@@ -24,8 +24,31 @@ set "GOODBYE_DPI_URL=https://github.com/ValdikSS/GoodbyeDPI/releases/download/0.
 :: Имя файла архива
 set "ZIP_FILE_NAME=goodbyedpi-0.2.3rc1-2.zip"
 
-:: URL для скачивания списка доменов YouTube
-set "YT_DOMAINS_URL=https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/russia-youtube.txt"
+:: Запрос у пользователя выбора списка доменов
+:choose_list
+echo Select the list of domains that you want to install:
+echo   1. Only YouTube (blacklist-youtube.txt)
+echo   2. Domains blocked by TSPU (blacklist-dpi.txt)
+echo   3. Domains used in the Censor Tracker (blacklist-ct.txt)
+set /p "CHOICE=Введите число от (1-3): "
+
+:: Проверка введенного значения
+if "%CHOICE%"=="" (
+    echo Error: You have not entered a value. Please enter from 1 to 3.
+    goto choose_list
+) else if "%CHOICE%"=="1" (
+    set "DOMAINS_URL=https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/blacklist-youtube.txt"
+    set "DOMAINS_FILE=russia-youtube.txt"
+) else if "%CHOICE%"=="2" (
+    set "DOMAINS_URL=https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/blacklist-dpi.txt"
+    set "DOMAINS_FILE=russia-dpi.txt"
+) else if "%CHOICE%"=="3" (
+    set "DOMAINS_URL=https://raw.githubusercontent.com/DevLn737/GoodbyeDPI-Install/main/blacklist-ct.txt"
+    set "DOMAINS_FILE=russia-ct.txt"
+) else (
+    echo Error: Incorrect selection. Please enter a number from 1 to 3.
+    goto choose_list
+)
 
 echo [1/8] Checking if DPIBypass folder exists...
 :: Проверка наличия папки, создание при необходимости
@@ -61,15 +84,15 @@ echo.
 :: Переход в распакованную папку x86_64
 pushd "%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64"
 
-echo [5/8] Downloading YouTube domains list...
-:: Скачивание списка доменов YouTube
-powershell -Command "Invoke-WebRequest -Uri '%YT_DOMAINS_URL%' -OutFile 'russia-youtube.txt'"
-echo Downloaded YouTube domains list.
+echo [5/8] Downloading selected domains list...
+:: Скачивание выбранного списка доменов
+powershell -Command "Invoke-WebRequest -Uri '%DOMAINS_URL%' -OutFile '%DOMAINS_FILE%'"
+echo Downloaded selected domains list to %DOMAINS_FILE%.
 echo.
 
 echo [6/8] Creating DPIBypass service...
-:: Создание службы DPIBypass
-sc create DPIBypass binPath= "\"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\goodbyedpi.exe\" --auto-ttl -6 --native-frag --blacklist \"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\russia-youtube.txt\"" start= auto
+:: Создание службы DPIBypass с выбранным списком доменов
+sc create DPIBypass binPath= "\"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\goodbyedpi.exe\" --auto-ttl -6 --native-frag --blacklist \"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\%DOMAINS_FILE%\"" start= auto
 sc description DPIBypass "Passive bypass of deep packet analysis by the provider"
 echo Created DPIBypass service.
 echo.
@@ -79,7 +102,6 @@ echo [7/8] Starting DPIBypass service...
 sc start DPIBypass
 echo Started DPIBypass service.
 echo.
-
 
 popd
 popd
