@@ -30,7 +30,7 @@ echo Select the list of domains that you want to install:
 echo   1. Only YouTube (blacklist-youtube.txt)
 echo   2. Domains blocked by TSPU (blacklist-dpi.txt)
 echo   3. Domains used in the Censor Tracker (blacklist-ct.txt)
-set /p "CHOICE=Введите число от (1-3): "
+set /p "CHOICE=Enter the number (1-3): "
 
 :: Проверка введенного значения
 if "%CHOICE%"=="" (
