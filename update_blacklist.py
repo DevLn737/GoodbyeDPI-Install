@@ -65,12 +65,11 @@ class Blacklist:
 
 def main():
     print("Выберите список доменов, который хотите обновить:")
-    print("  1. Домены используемые в Censor Tracker")
-    print("  2. Домены заблокированные ТСПУ")
-
-    choice = input("Введите число от 1 до 2: ")
+    print("1. Домены используемые в Censor Tracker")
+    print("2. Домены заблокированные ТСПУ")
 
     while True:
+        choice = input("Введите число от 1 до 2: ")
         if choice == "1":
             blacklist = Blacklist(UpdateUrl.CT)
             file_path = "blacklist-ct.txt"
