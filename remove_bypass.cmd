@@ -31,7 +31,8 @@ echo.
 
 echo [3/5] Unloading WinDivert driver if it is loaded...
 :: Выгрузка драйвера WinDivert
-sc stop WinDivert1.4
+sc stop "WinDivert"
+sc delete "WinDivert"
 echo.
 
 echo [4/5] Deleting downloaded files and folders...

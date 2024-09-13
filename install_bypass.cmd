@@ -92,7 +92,7 @@ echo.
 
 echo [6/8] Creating DPIBypass service...
 :: Создание службы DPIBypass с выбранным списком доменов
-sc create DPIBypass binPath= "\"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\goodbyedpi.exe\" --auto-ttl -6 --native-frag --blacklist \"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\%DOMAINS_FILE%\"" start= auto
+sc create DPIBypass binPath= "\"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\goodbyedpi.exe\" -1 --blacklist \"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\%DOMAINS_FILE%\"" start= auto
 sc description DPIBypass "Passive bypass of deep packet analysis by the provider"
 echo Created DPIBypass service.
 echo.
