@@ -3,7 +3,7 @@ setlocal
 
 :: Проверка прав администратора
 net session >nul 2>&1
-if %errorlevel% neq 0 (
+if %errorLevel% neq 0 (
     echo This script requires administrative privileges.
     echo Please run this script as an administrator.
     pause
@@ -19,10 +19,10 @@ echo.
 set "BYPASS_FOLDER=%LOCALAPPDATA%\DPIByPass"
 
 :: URL для скачивания GoodbyeDPI
-set "GOODBYE_DPI_URL=https://github.com/ValdikSS/GoodbyeDPI/releases/download/0.2.3rc1/goodbyedpi-0.2.3rc1-2.zip"
+set "GOODBYE_DPI_URL=https://github.com/ValdikSS/GoodbyeDPI/releases/download/0.2.3rc3/goodbyedpi-0.2.3rc3-2.zip"
 
 :: Имя файла архива
-set "ZIP_FILE_NAME=goodbyedpi-0.2.3rc1-2.zip"
+set "ZIP_FILE_NAME=goodbyedpi-0.2.3rc3-2.zip"
 
 :: Запрос у пользователя выбора списка доменов
 :choose_list
@@ -82,7 +82,7 @@ echo Deleted %ZIP_FILE_NAME%.
 echo.
 
 :: Переход в распакованную папку x86_64
-pushd "%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64"
+pushd "%BYPASS_FOLDER%\goodbyedpi-0.2.3rc3-2\x86_64"
 
 echo [5/8] Downloading selected domains list...
 :: Скачивание выбранного списка доменов
@@ -92,7 +92,7 @@ echo.
 
 echo [6/8] Creating DPIBypass service...
 :: Создание службы DPIBypass с выбранным списком доменов
-sc create DPIBypass binPath= "\"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\goodbyedpi.exe\" -1 --blacklist \"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc1\x86_64\%DOMAINS_FILE%\"" start= auto
+sc create DPIBypass binPath= "\"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc3-2\x86_64\goodbyedpi.exe\" -1 --blacklist \"%BYPASS_FOLDER%\goodbyedpi-0.2.3rc3-2\x86_64\%DOMAINS_FILE%\"" start= auto
 sc description DPIBypass "Passive bypass of deep packet analysis by the provider"
 echo Created DPIBypass service.
 echo.
